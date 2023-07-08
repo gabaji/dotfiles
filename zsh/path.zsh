@@ -1,1 +1,1 @@
-export PATH=$PATH:~/.scripts
+export PATH=$PATH:$HOME/.scripts
