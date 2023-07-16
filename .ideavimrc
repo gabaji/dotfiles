@@ -1,0 +1,111 @@
+"" Source your .vimrc "source ~/.vimrc
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+let mapleader=" "
+sethandler <F2> a:vim
+sethandler <F3> a:vim
+set NERDTree
+nnoremap <F2> :NERDTree<CR>
+nnoremap <F3> :NerdTreeClose<CR>
+nnoremap U <c-r>
+nnoremap <s-TAB> :action PreviousTab<CR>
+nnoremap <TAB> :action NextTab<CR>
+nnoremap <leader>pr :action SplitVertically<CR>
+map <leader>bp <Action>(ToggleLineBreakpoint)
+nnoremap <F3> :action ToggleDistractionFreeMode<CR>
+" nnoremap \r :action ideavim.reloadvimrc.reload<cr>
+
+" maps d to delete instead of cut
+nnoremap d "_d
+vnoremap d "_d
+
+" map to jump around code
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz 
+
+
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+nmap zj o<Esc>k
+nmap zk O<Esc>j
+nmap <leader>q :action CloseContent<cr>
+nmap <leader>Q :action ReopenClosedTab<cr>
+map [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+set clipboard+=unnamed
+set clipboard+=ideaput
+set scrolloff=5
+set incsearch
+
+
+set number relativenumber
+set nu rnu
+
+set sneak
+let g:sneak#label = 1
+
+vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+vim.keymap.set("n", "<leader>vwm", function()
+    require("vim-with-me").StartVimWithMe()
+end)
+vim.keymap.set("n", "<leader>svwm", function()
+    require("vim-with-me").StopVimWithMe()
+end)
+
+-- greatest remap ever
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- next greatest remap ever : asbjornHaland
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+
+-- This is going to get me cancelled
+
+vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
+vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+
+vim.keymap.set("n", "<leader><leader>", function()
+    vim.cmd("so")
+end)
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+" Find more examples here: https://jb.gg/share-ideavimrc
