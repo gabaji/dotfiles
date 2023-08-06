@@ -91,7 +91,9 @@ return packer.startup(function(use)
     }
 
     -- Git
-    use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
+    use { "lewis6991/gitsigns.nvim", commit = "5d73da785a3c05fd63ac31769079db05169a6ec7" }
+    use { "f-person/git-blame.nvim", commit = "93d983806a0c76692bebd6f804c8eaa2a3844452" }
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

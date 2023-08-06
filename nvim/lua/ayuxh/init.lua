@@ -10,3 +10,6 @@ require("ayuxh.bufferline")
 require("ayuxh.nvimtree")
 require("ayuxh.telescope")
 require("ayuxh.comment")
+require("ayuxh.gitsigns")
+require("ayuxh.gitblame")
+-- require("ayuxh.lualine") Customize this later
