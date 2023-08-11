@@ -12,4 +12,7 @@ require("ayuxh.telescope")
 require("ayuxh.comment")
 require("ayuxh.gitsigns")
 require("ayuxh.gitblame")
--- require("ayuxh.lualine") Customize this later
+require("ayuxh.lualine")
+require("ayuxh.undotree")
+require("ayuxh.symboloutline")
+require("ayuxh.newfile")

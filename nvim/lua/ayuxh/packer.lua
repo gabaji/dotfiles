@@ -56,6 +56,7 @@ return packer.startup(function(use)
     use { "lukas-reineke/indent-blankline.nvim", commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" }
     use { "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" }
     use { "folke/which-key.nvim" }
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 
     -- Colorschemes
     use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
@@ -94,6 +95,9 @@ return packer.startup(function(use)
     use { "lewis6991/gitsigns.nvim", commit = "5d73da785a3c05fd63ac31769079db05169a6ec7" }
     use { "f-person/git-blame.nvim", commit = "93d983806a0c76692bebd6f804c8eaa2a3844452" }
     use { "catppuccin/nvim", as = "catppuccin" }
+    use { 'mbbill/undotree', commit = '0e11ba7325efbbb3f3bebe06213afa3e7ec75131' }
+    use { 'simrat39/symbols-outline.nvim', commit = '512791925d57a61c545bc303356e8a8f7869763c' }
+    use { 'ggandor/leap.nvim', commit = '5efe985cf68fac3b6a6dfe7a75fbfaca8db2af9c' }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

@@ -1,11 +1,24 @@
 local lsp = require('lsp-zero').preset({})
+local null_ls = require("null-ls")
+local cmp = require("cmp")
 
+cmp.setup({
+    experimental = {
+        -- I like the new menu better! Nice work hrsh7th
+        native_menu = false,
+
+        -- Let's play with this for a day or two
+        ghost_text = true,
+    },
+})
 require('lspconfig').clangd.setup({
   single_file_support = true,
   on_attach = function(client, bufnr)
     print('hello clangd')
   end
 })
+
+require('lspconfig').pylint.setup()
 
 
 lsp.on_attach(function(client, bufnr)
@@ -26,6 +39,11 @@ lsp.format_on_save({
   }
 })
 
+null_ls.setup({
+    sources = {
+        null_ls.builtins.diagnostics.flake8
+    },
+})
 function bemol()
  local bemol_dir = vim.fs.find({ '.bemol' }, { upward = true, type = 'directory'})[1]
  local ws_folders_lsp = {}
@@ -47,3 +65,5 @@ end
 bemol()
 
 lsp.setup()
+
+

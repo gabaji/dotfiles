@@ -39,3 +39,6 @@ require('gitsigns').setup {
     enable = false
   },
 }
+vim.keymap.set('n', '<leader>gs', ':Gitsigns preview_hunk<CR>')
+vim.keymap.set('n', '<leader>gS', ':Gitsigns preview_hunk_inline<CR>')
+vim.keymap.set('n', '<leader>gx', ':Gitsigns reset_hunk<CR>')
