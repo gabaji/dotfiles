@@ -98,7 +98,7 @@ return packer.startup(function(use)
     use { 'mbbill/undotree', commit = '0e11ba7325efbbb3f3bebe06213afa3e7ec75131' }
     use { 'simrat39/symbols-outline.nvim', commit = '512791925d57a61c545bc303356e8a8f7869763c' }
     use { 'ggandor/leap.nvim', commit = '5efe985cf68fac3b6a6dfe7a75fbfaca8db2af9c' }
-
+    use "rebelot/kanagawa.nvim"
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then

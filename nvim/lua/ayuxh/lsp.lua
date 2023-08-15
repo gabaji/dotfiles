@@ -1,5 +1,4 @@
 local lsp = require('lsp-zero').preset({})
-local null_ls = require("null-ls")
 local cmp = require("cmp")
 
 cmp.setup({
@@ -18,7 +17,6 @@ require('lspconfig').clangd.setup({
   end
 })
 
-require('lspconfig').pylint.setup()
 
 
 lsp.on_attach(function(client, bufnr)
@@ -39,11 +37,6 @@ lsp.format_on_save({
   }
 })
 
-null_ls.setup({
-    sources = {
-        null_ls.builtins.diagnostics.flake8
-    },
-})
 function bemol()
  local bemol_dir = vim.fs.find({ '.bemol' }, { upward = true, type = 'directory'})[1]
  local ws_folders_lsp = {}
