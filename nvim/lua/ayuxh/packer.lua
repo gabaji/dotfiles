@@ -75,11 +75,11 @@ return packer.startup(function(use)
     use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
 
     -- LSP
-    use { "VonHeikemen/lsp-zero.nvim", commit = "73bc33fe9ad5a1d4501536fdd4755b3aa18c3392" }
-    use { "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" }           -- enable LSP
+    use { "VonHeikemen/lsp-zero.nvim", commit = "0d79f282566a95b0d6b2f1aab9ada54c3de0f92e" }
+    use { "neovim/nvim-lspconfig", commit = "0d29cad8de3b2c654315203fc1fe12fde722a18a" }           -- enable LSP
     use { "williamboman/mason.nvim", commit = "fe9e34a9ab4d64321cdc3ecab4ea1809239bb73f" }         -- simple to use language server installer
     use { "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" }
-    use { "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
+    use { "jose-elias-alvarez/null-ls.nvim", commit = "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7" } -- for formatters and linters
     use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
 
     -- Telescope
@@ -99,9 +99,11 @@ return packer.startup(function(use)
     use { 'simrat39/symbols-outline.nvim', commit = '512791925d57a61c545bc303356e8a8f7869763c' }
     use { 'ggandor/leap.nvim', commit = '5efe985cf68fac3b6a6dfe7a75fbfaca8db2af9c' }
     use "rebelot/kanagawa.nvim"
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
-    if PACKER_BOOTSTRAP then
-        require("packer").sync()
-    end
-end)
+    use 'mfussenegger/nvim-dap-python'
+    use { 'mfussenegger/nvim-jdtls', commit = '095dc490f362adc85be66dc14bd9665ddd94413b' }
+        -- Automatically set up your configuration after cloning packer.nvim
+        -- Put this at the end after all plugins
+        if PACKER_BOOTSTRAP then
+            require("packer").sync()
+        end
+    end)
