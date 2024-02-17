@@ -1,7 +1,6 @@
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 plug "zsh-users/zsh-syntax-highlighting"
 # plug "jeffreytse/zsh-vi-mode"
-plug "zap-zsh/exa"
 # plug "unixorn/fzf-zsh-plugin"
 plug "marlonrichert/zsh-autocomplete"
 plug "zsh-users/zsh-autosuggestions"
