@@ -1,6 +1,9 @@
 local lsp = require('lsp-zero').preset({})
 local cmp = require("cmp")
 require('lspconfig').jdtls.setup({ autostart = false })
+require('lspconfig')['eslint'].setup {
+  capabilities = capabilities
+}
 cmp.setup({
     experimental = {
         -- I like the new menu better! Nice work hrsh7th

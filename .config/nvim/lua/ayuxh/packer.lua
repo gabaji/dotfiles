@@ -83,7 +83,7 @@ return packer.startup(function(use)
     use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
 
     -- Telescope
-    use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
+    use { "nvim-telescope/telescope.nvim", commit = "4522d7e3ea75ffddabdc39957168a8a7060b5df0" }
 
     -- Treesitter
     use {
@@ -106,4 +106,16 @@ return packer.startup(function(use)
         if PACKER_BOOTSTRAP then
             require("packer").sync()
         end
+    use({
+      "ayuxh@git.amazon.com:pkg/NinjaHooks",
+      branch = "mainline",
+      rtp = 'configuration/vim/amazon/brazil-config',
+    })
+    use({
+    "https://git.amazon.com/pkg/Scat-nvim",
+    branch = "mainline",
+    requires = { "nvim-telescope/telescope.nvim", "sindrets/diffview.nvim" },
+    })
+
+
     end)
