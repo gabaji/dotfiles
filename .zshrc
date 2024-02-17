@@ -1,17 +1,18 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # these dotfiles come from my personal config on github. github.com/gabaji/dotfiles
-source $HOME/dotfiles/zsh/path.zsh
+source zsh/path.zsh
+source zsh/git-alias.zsh
+source zsh/plugins.zsh
+source zsh/alias.zsh
+
 source $HOME/Ayuxh-config/amazon.zsh
-source $HOME/dotfiles/zsh/git-alias.zsh
-source $HOME/dotfiles/zsh/plugins.zsh
-source $HOME/dotfiles/zsh/alias.zsh
 
 # code.amazon.com/packages/Ayuxh-config
 
 ZSH_DISABLE_COMPFIX=true
 
 
-export PATH=$PATH:/Users/ayuxh/.toolbox/bin:/Users/ayuxh/.cargo/bin:/Users/ayuxh/.local/bin
+export PATH=$PATH:$HOME/.toolbox/bin:$HOME/.cargo/bin:/$HOME/.local/bin
 
 eval "$(zoxide init zsh)"
 eval $(thefuck --alias)
@@ -60,7 +61,6 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PYTHONPATH="/Users/ayuxh/workplace/PayPolicyBuildTools/src/PayPolicyBuildTool"
 
 export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
 
