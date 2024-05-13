@@ -1,0 +1,11 @@
+
+<snippet>
+<content><![CDATA[auto ${1:name} = [&](${2}) {
+	${3}
+};
+
+]]></content>
+	<tabTrigger>lam</tabTrigger>
+	<scope>source.c++</scope>
+	<!-- <description> demo description </description> -->
+</snippet>

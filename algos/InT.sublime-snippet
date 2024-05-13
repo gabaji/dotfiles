@@ -1,0 +1,13 @@
+
+<snippet>
+<content><![CDATA[re(N);
+F0R(i,N-1) {
+	int a,b; re(a,b);
+	adj[a].pb(b), adj[b].pb(a);
+}
+
+]]></content>
+	<tabTrigger>InT</tabTrigger>
+	<scope>source.c++</scope>
+	<!-- <description> demo description </description> -->
+</snippet>
