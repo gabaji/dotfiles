@@ -47,7 +47,7 @@ return packer.startup(function(use)
     use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08" }
     use { "kyazdani42/nvim-web-devicons", commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352" }
     use { "kyazdani42/nvim-tree.lua", commit = "7282f7de8aedf861fe0162a559fc2b214383c51c" }
-    use { "akinsho/bufferline.nvim", commit = "99f0932365b34e22549ff58e1bea388465d15e99" }
+    use { "akinsho/bufferline.nvim"}
     use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }
     use { "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" }
     use { "akinsho/toggleterm.nvim", commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda" }
@@ -100,6 +100,7 @@ return packer.startup(function(use)
     use { 'ggandor/leap.nvim', commit = '5efe985cf68fac3b6a6dfe7a75fbfaca8db2af9c' }
     use "rebelot/kanagawa.nvim"
     use 'mfussenegger/nvim-dap-python'
+    use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
     use { 'mfussenegger/nvim-jdtls', commit = '095dc490f362adc85be66dc14bd9665ddd94413b' }
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
@@ -111,11 +112,12 @@ return packer.startup(function(use)
       branch = "mainline",
       rtp = 'configuration/vim/amazon/brazil-config',
     })
-    use({
-    "https://git.amazon.com/pkg/Scat-nvim",
-    branch = "mainline",
-    requires = { "nvim-telescope/telescope.nvim", "sindrets/diffview.nvim" },
-    })
-
+    use {
+        "thenbe/markdown-todo.nvim",
+        ft = { "md", "markdown" },
+        config = function()
+            require("markdown-todo").setup()
+        end
+    }
 
     end)
