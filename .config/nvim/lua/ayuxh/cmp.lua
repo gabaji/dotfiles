@@ -122,9 +122,22 @@ cmp.setup {
     documentation = {
       border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
     },
+    completion = {
+      max_height = 5, -- Limit to 5 items
+      max_width = 50,
+    },
   },
   experimental = {
     ghost_text = false,
     native_menu = false,
+  },
+  view = {
+    entries = {
+      name = "custom",
+      selection_order = "near_cursor",
+    },
+  },
+  performance = {
+    max_view_entries = 5, -- Also limit the internal view to 5 entries
   },
 }

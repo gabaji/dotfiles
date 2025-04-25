@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # these dotfiles come from my personal config on github. github.com/gabaji/dotfiles
-source zsh/path.zsh
-source zsh/git-alias.zsh
-source zsh/plugins.zsh
-source zsh/alias.zsh
+source ~/zsh/path.zsh
+source ~/zsh/git-alias.zsh
+source ~/zsh/plugins.zsh
+source ~/zsh/alias.zsh
 
 source $HOME/Ayuxh-config/amazon.zsh
 
